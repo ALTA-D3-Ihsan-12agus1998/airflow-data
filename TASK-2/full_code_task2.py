@@ -72,7 +72,7 @@ def load_predictions_to_postgres(**kwargs):
         probability = prediction['probability']
         gender = prediction['gender']
         pg_hook.run("""
-            INSERT INTO gender_name_prediction (input, details, result_found, first_name, probability, gender)
+            INSERT INTO rais_gender_name_prediction_task2 (input, details, result_found, first_name, probability, gender)
             VALUES (%s, %s, %s, %s, %s, %s);
         """, parameters=(input_data, details_data, result_found, first_name, probability, gender))
 
